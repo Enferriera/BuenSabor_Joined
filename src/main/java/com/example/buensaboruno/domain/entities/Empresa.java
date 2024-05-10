@@ -27,5 +27,5 @@ public class Empresa extends Base{
     @OneToMany(mappedBy = "empresa",cascade = CascadeType.REFRESH,fetch = FetchType.LAZY)
     @ToString.Exclude
     @Builder.Default
-    private Set<Sucursal> Sucursales= new HashSet<>();
+    private Set<Sucursal> sucursales= new HashSet<>();
 }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CategoriaRepository extends BaseRepository<Categoria,Long>{
-    @Query("SELECT p FROM Categoria p LEFT JOIN FETCH p.sucursales WHERE p.id = :id")
-    Categoria findAllWithSucursales(@Param("id") Long id);
+    @Query("SELECT c FROM Categoria c LEFT JOIN FETCH c.sucursales WHERE c.id = :id")
+    Categoria findWithSucursalesById(@Param("id") Long id);
 }

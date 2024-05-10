@@ -12,6 +12,5 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 @Repository
 public interface ArticuloRepository  extends BaseRepository<Articulo, Long> {
-    @Query("SELECT p FROM Articulo p LEFT JOIN FETCH p.estaEnPromociones WHERE p.id = :id")
-    Articulo findAllWithArticulos(@Param("id") Long id);
+
 }
