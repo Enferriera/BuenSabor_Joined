@@ -1,12 +1,13 @@
 package com.example.buensaboruno.business.facade.Imp;
 
-import com.entidades.buenSabor.business.facade.Base.BaseFacadeImp;
-import com.entidades.buenSabor.business.facade.LocalidadFacade;
-import com.entidades.buenSabor.business.mapper.BaseMapper;
-import com.entidades.buenSabor.business.service.Base.BaseService;
-import com.entidades.buenSabor.business.service.LocalidadService;
-import com.entidades.buenSabor.domain.dto.LocalidadDto;
-import com.entidades.buenSabor.domain.entities.Localidad;
+
+import com.example.buensaboruno.business.facade.Base.BaseFacadeImp;
+import com.example.buensaboruno.business.facade.LocalidadFacade;
+import com.example.buensaboruno.business.mapper.BaseMapper;
+import com.example.buensaboruno.business.service.Base.BaseService;
+import com.example.buensaboruno.business.service.LocalidadService;
+import com.example.buensaboruno.domain.dto.LocalidadDto;
+import com.example.buensaboruno.domain.entities.Localidad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

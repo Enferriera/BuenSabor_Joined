@@ -1,7 +1,8 @@
 package com.example.buensaboruno.business.service;
 
-import com.entidades.buenSabor.business.service.Base.BaseService;
-import com.entidades.buenSabor.domain.entities.Domicilio;
+
+import com.example.buensaboruno.business.service.Base.BaseService;
+import com.example.buensaboruno.domain.entities.Domicilio;
 
 public interface DomicilioService extends BaseService<Domicilio,Long> {
 }

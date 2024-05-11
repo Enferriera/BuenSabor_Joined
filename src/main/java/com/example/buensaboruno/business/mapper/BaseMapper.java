@@ -1,7 +1,9 @@
 package com.example.buensaboruno.business.mapper;
 
-import com.entidades.buenSabor.domain.dto.BaseDto;
-import com.entidades.buenSabor.domain.entities.Base;
+
+
+import com.example.buensaboruno.domain.dto.BaseDto;
+import com.example.buensaboruno.domain.entities.Base;
 
 import java.util.List;
 

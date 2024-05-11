@@ -1,9 +1,10 @@
 package com.example.buensaboruno.presentation.rest;
 
-import com.entidades.buenSabor.business.facade.Imp.LocalidadFacadeImp;
-import com.entidades.buenSabor.domain.dto.LocalidadDto;
-import com.entidades.buenSabor.domain.entities.Localidad;
-import com.entidades.buenSabor.presentation.rest.Base.BaseControllerImp;
+
+import com.example.buensaboruno.business.facade.Imp.LocalidadFacadeImp;
+import com.example.buensaboruno.domain.dto.LocalidadDto;
+import com.example.buensaboruno.domain.entities.Localidad;
+import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

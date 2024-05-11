@@ -1,7 +1,8 @@
 package com.example.buensaboruno.business.facade;
 
-import com.entidades.buenSabor.business.facade.Base.BaseFacade;
-import com.entidades.buenSabor.domain.dto.SucursalDto;
+
+import com.example.buensaboruno.business.facade.Base.BaseFacade;
+import com.example.buensaboruno.domain.dto.SucursalDto;
 
 public interface Sucursalfacade extends BaseFacade<SucursalDto, Long> {
 }

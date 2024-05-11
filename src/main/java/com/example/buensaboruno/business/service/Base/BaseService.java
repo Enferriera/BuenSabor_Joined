@@ -1,6 +1,8 @@
 package com.example.buensaboruno.business.service.Base;
 
-import com.entidades.buenSabor.domain.entities.Base;
+
+
+import com.example.buensaboruno.domain.entities.Base;
 
 import java.io.Serializable;
 import java.util.List;

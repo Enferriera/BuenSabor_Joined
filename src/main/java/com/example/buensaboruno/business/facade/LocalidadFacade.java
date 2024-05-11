@@ -1,7 +1,9 @@
 package com.example.buensaboruno.business.facade;
 
-import com.entidades.buenSabor.business.facade.Base.BaseFacade;
-import com.entidades.buenSabor.domain.dto.LocalidadDto;
+
+
+import com.example.buensaboruno.business.facade.Base.BaseFacade;
+import com.example.buensaboruno.domain.dto.LocalidadDto;
 
 import java.util.List;
 

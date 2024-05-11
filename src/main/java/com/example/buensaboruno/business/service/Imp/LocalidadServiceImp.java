@@ -1,9 +1,10 @@
 package com.example.buensaboruno.business.service.Imp;
 
-import com.entidades.buenSabor.business.service.Base.BaseServiceImp;
-import com.entidades.buenSabor.business.service.LocalidadService;
-import com.entidades.buenSabor.domain.entities.Localidad;
-import com.entidades.buenSabor.repositories.LocalidadRepository;
+
+import com.example.buensaboruno.business.service.Base.BaseServiceImp;
+import com.example.buensaboruno.business.service.LocalidadService;
+import com.example.buensaboruno.domain.entities.Localidad;
+import com.example.buensaboruno.repositories.LocalidadRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

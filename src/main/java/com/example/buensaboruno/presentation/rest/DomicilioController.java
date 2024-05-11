@@ -1,9 +1,10 @@
 package com.example.buensaboruno.presentation.rest;
 
-import com.entidades.buenSabor.business.facade.Imp.DomicilioFacadeImp;
-import com.entidades.buenSabor.domain.dto.DomicilioDto;
-import com.entidades.buenSabor.domain.entities.Domicilio;
-import com.entidades.buenSabor.presentation.rest.Base.BaseControllerImp;
+
+import com.example.buensaboruno.business.facade.Imp.DomicilioFacadeImp;
+import com.example.buensaboruno.domain.dto.DomicilioDto;
+import com.example.buensaboruno.domain.entities.Domicilio;
+import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

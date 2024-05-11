@@ -1,7 +1,8 @@
 package com.example.buensaboruno.business.mapper;
 
-import com.entidades.buenSabor.domain.dto.LocalidadDto;
-import com.entidades.buenSabor.domain.entities.Localidad;
+
+import com.example.buensaboruno.domain.dto.LocalidadDto;
+import com.example.buensaboruno.domain.entities.Localidad;
 import org.mapstruct.Mapper;
 
 import java.util.List;

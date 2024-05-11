@@ -1,7 +1,8 @@
 package com.example.buensaboruno.business.service.Base;
 
-import com.entidades.buenSabor.domain.entities.Base;
-import com.entidades.buenSabor.repositories.BaseRepository;
+
+import com.example.buensaboruno.domain.entities.Base;
+import com.example.buensaboruno.repositories.BaseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public abstract class BaseServiceImp<E extends Base,ID extends Serializable> imp
 
     @Override
     public List<E> getAll(){
-        var entities = baseRepository.getAll();
+        var entities = baseRepository.findAll();
         logger.info("Obtenidas entidades {}",entities);
         return entities;
     }

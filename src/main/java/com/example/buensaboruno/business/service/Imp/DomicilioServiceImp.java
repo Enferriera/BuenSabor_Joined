@@ -1,8 +1,9 @@
 package com.example.buensaboruno.business.service.Imp;
 
-import com.entidades.buenSabor.business.service.Base.BaseServiceImp;
-import com.entidades.buenSabor.business.service.DomicilioService;
-import com.entidades.buenSabor.domain.entities.Domicilio;
+
+import com.example.buensaboruno.business.service.Base.BaseServiceImp;
+import com.example.buensaboruno.business.service.DomicilioService;
+import com.example.buensaboruno.domain.entities.Domicilio;
 import org.springframework.stereotype.Service;
 
 @Service

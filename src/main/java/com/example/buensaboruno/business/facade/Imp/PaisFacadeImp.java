@@ -1,11 +1,12 @@
 package com.example.buensaboruno.business.facade.Imp;
 
-import com.entidades.buenSabor.business.facade.Base.BaseFacadeImp;
-import com.entidades.buenSabor.business.facade.PaisFacade;
-import com.entidades.buenSabor.business.mapper.BaseMapper;
-import com.entidades.buenSabor.business.service.Base.BaseService;
-import com.entidades.buenSabor.domain.dto.PaisDto;
-import com.entidades.buenSabor.domain.entities.Pais;
+
+import com.example.buensaboruno.business.facade.Base.BaseFacadeImp;
+import com.example.buensaboruno.business.facade.PaisFacade;
+import com.example.buensaboruno.business.mapper.BaseMapper;
+import com.example.buensaboruno.business.service.Base.BaseService;
+import com.example.buensaboruno.domain.dto.PaisDto;
+import com.example.buensaboruno.domain.entities.Pais;
 import org.springframework.stereotype.Service;
 
 

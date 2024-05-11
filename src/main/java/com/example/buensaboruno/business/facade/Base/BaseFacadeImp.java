@@ -1,10 +1,11 @@
 package com.example.buensaboruno.business.facade.Base;
 
 
-import com.entidades.buenSabor.business.mapper.BaseMapper;
-import com.entidades.buenSabor.business.service.Base.BaseService;
-import com.entidades.buenSabor.domain.dto.BaseDto;
-import com.entidades.buenSabor.domain.entities.Base;
+
+import com.example.buensaboruno.business.mapper.BaseMapper;
+import com.example.buensaboruno.business.service.Base.BaseService;
+import com.example.buensaboruno.domain.dto.BaseDto;
+import com.example.buensaboruno.domain.entities.Base;
 
 import java.io.Serializable;
 import java.util.List;

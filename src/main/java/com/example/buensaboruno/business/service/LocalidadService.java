@@ -1,7 +1,9 @@
 package com.example.buensaboruno.business.service;
 
-import com.entidades.buenSabor.business.service.Base.BaseService;
-import com.entidades.buenSabor.domain.entities.Localidad;
+
+
+import com.example.buensaboruno.business.service.Base.BaseService;
+import com.example.buensaboruno.domain.entities.Localidad;
 
 import java.util.List;
 

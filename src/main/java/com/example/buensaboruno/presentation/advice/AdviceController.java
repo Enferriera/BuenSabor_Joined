@@ -1,6 +1,7 @@
 package com.example.buensaboruno.presentation.advice;
 
-import com.entidades.buenSabor.domain.dto.ErrorDto;
+
+import com.example.buensaboruno.domain.dto.ErrorDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

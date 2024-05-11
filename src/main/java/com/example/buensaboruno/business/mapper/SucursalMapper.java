@@ -1,7 +1,8 @@
 package com.example.buensaboruno.business.mapper;
 
-import com.entidades.buenSabor.domain.dto.SucursalDto;
-import com.entidades.buenSabor.domain.entities.Sucursal;
+
+import com.example.buensaboruno.domain.dto.SucursalDto;
+import com.example.buensaboruno.domain.entities.Sucursal;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring", uses = DomicilioMapper.class )
