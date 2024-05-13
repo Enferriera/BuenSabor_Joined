@@ -1,8 +1,7 @@
 package com.example.buensaboruno.presentation.rest;
 
 
-import com.example.buensaboruno.business.facade.Imp.LocalidadFacadeImp;
-import com.example.buensaboruno.domain.dto.LocalidadDto;
+
 import com.example.buensaboruno.domain.entities.Localidad;
 import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.slf4j.Logger;
@@ -15,16 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/localidad")
 @CrossOrigin("*")
-public class LocalidadController extends BaseControllerImp<Localidad, LocalidadDto, Long, LocalidadFacadeImp> {
+public class LocalidadController {
 
-    public LocalidadController(LocalidadFacadeImp facade) {
-        super(facade);
-    }
-    private static final Logger logger = LoggerFactory.getLogger(LocalidadController.class);
 
-    @GetMapping("findByProvincia/{idProvincia}")
-    public ResponseEntity<List<LocalidadDto>> getByProvincia(@PathVariable Long idProvincia) {
-        logger.info("INICIO GET BY PROVINCIA");
-        return ResponseEntity.ok(facade.findByProvinciaId(idProvincia));
-    }
 }

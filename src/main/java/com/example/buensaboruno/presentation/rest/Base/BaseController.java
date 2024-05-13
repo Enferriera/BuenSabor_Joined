@@ -1,20 +1,23 @@
 package com.example.buensaboruno.presentation.rest.Base;
 
 
-import com.example.buensaboruno.domain.dto.BaseDto;
+
+import com.example.buensaboruno.domain.entities.Base;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.io.Serializable;
 import java.util.List;
 
-public interface BaseController <D extends BaseDto, ID extends Serializable> {
-    ResponseEntity<D> getById(ID id);
+public interface BaseController <D extends Base, ID extends Serializable> {
+    ResponseEntity<?> getById(@PathVariable ID id);
 
-    ResponseEntity<List<D>> getAll();
+    ResponseEntity<?> getAll();
 
-    ResponseEntity<D> create(D entity);
+    ResponseEntity<?> create(@RequestBody D entity);
 
-    ResponseEntity<D> edit(D entity, ID id);
+    ResponseEntity<?> edit(@RequestBody D entity, @PathVariable ID id);
 
-    ResponseEntity<?> deleteById(ID id);
+    ResponseEntity<?> deleteById(@PathVariable ID id);
 }

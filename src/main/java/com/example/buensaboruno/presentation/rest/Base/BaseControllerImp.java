@@ -1,8 +1,8 @@
 package com.example.buensaboruno.presentation.rest.Base;
 
 
-import com.example.buensaboruno.business.facade.Base.BaseFacadeImp;
-import com.example.buensaboruno.domain.dto.BaseDto;
+
+import com.example.buensaboruno.business.service.Base.BaseServiceImp;
 import com.example.buensaboruno.domain.entities.Base;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,42 +14,41 @@ import java.io.Serializable;
 import java.util.List;
 
 @Controller
-public abstract class BaseControllerImp <E extends Base,D extends BaseDto, ID extends Serializable, F extends BaseFacadeImp<E,D,ID>> implements BaseController<D,ID> {
+public abstract class BaseControllerImp <E extends Base, S extends BaseServiceImp<E, Long>> implements BaseController<E, Long> {
 
-    private static final Logger logger = LoggerFactory.getLogger(BaseControllerImp.class);
-    protected F facade;
-    public BaseControllerImp(F facade){
-        this.facade = facade;
+    protected S servicio;
+
+    public BaseControllerImp(S servicio) {
+        this.servicio = servicio;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<D> getById(@PathVariable ID id){
-        logger.info("INICIO GET BY ID {}",id);
-        return ResponseEntity.ok(facade.getById(id));
+    public ResponseEntity<?> getById(@PathVariable Long id){
+
+        return ResponseEntity.ok(servicio.getById(id));
     }
 
     @GetMapping
-    public ResponseEntity<List<D>> getAll() {
-        logger.info("INICIO GET ALL");
-        return ResponseEntity.ok(facade.getAll());
+    public ResponseEntity<List<?>> getAll() {
+
+        return ResponseEntity.ok(servicio.getAll());
     }
 
     @PostMapping()
-    public ResponseEntity<D> create(@RequestBody D entity){
-        logger.info("INICIO CREATE {}",entity.getClass());
-        return ResponseEntity.ok(facade.createNew(entity));
+    public ResponseEntity<?> create(@RequestBody E entity){
+
+        return ResponseEntity.ok(servicio.create(entity));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<D> edit(@RequestBody D entity, @PathVariable ID id){
-        logger.info("INICIO EDIT {}",entity.getClass());
-        return ResponseEntity.ok(facade.update(entity, id));
+    public ResponseEntity<?> edit(@RequestBody E entity, @PathVariable Long id){
+        return ResponseEntity.ok(servicio.update(entity, id));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteById(@PathVariable ID id){
-        logger.info("INICIO DELETE BY ID");
-        facade.deleteById(id);
+    public ResponseEntity<?> deleteById(@PathVariable Long id){
+
+        servicio.deleteById(id);
         return ResponseEntity.ok(null);
     }
 }

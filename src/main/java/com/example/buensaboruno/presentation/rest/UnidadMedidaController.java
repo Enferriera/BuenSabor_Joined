@@ -1,6 +1,8 @@
 package com.example.buensaboruno.presentation.rest;
 
 import com.example.buensaboruno.business.service.Imp.UnidadMedidaServiceImpl;
+import com.example.buensaboruno.domain.entities.UnidadMedida;
+import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +16,9 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("unidadesmedida")
-public class UnidadMedidaController {
-    @Autowired
-    private UnidadMedidaServiceImpl unidadMedidaService;
+public class UnidadMedidaController extends BaseControllerImp<UnidadMedida, UnidadMedidaServiceImpl> {
 
-    @GetMapping("")
-    public ResponseEntity<List<?>> getAll(){
-        return ResponseEntity.status(HttpStatus.OK).body(unidadMedidaService.getAll());
+    public UnidadMedidaController(UnidadMedidaServiceImpl servicio) {
+        super(servicio);
     }
 }

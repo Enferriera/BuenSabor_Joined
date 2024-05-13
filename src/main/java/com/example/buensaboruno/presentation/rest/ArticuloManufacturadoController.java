@@ -1,6 +1,8 @@
 package com.example.buensaboruno.presentation.rest;
 
 import com.example.buensaboruno.business.service.Imp.ArticuloManufacturadoServiceImpl;
+import com.example.buensaboruno.domain.entities.ArticuloManufacturado;
+import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,12 +16,9 @@ import java.util.List;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("articulos/manufacturados")
-public class ArticuloManufacturadoController {
-    @Autowired
-    private ArticuloManufacturadoServiceImpl manufacturadoService;
+public class ArticuloManufacturadoController extends BaseControllerImp<ArticuloManufacturado, ArticuloManufacturadoServiceImpl> {
 
-    @GetMapping("")
-    public ResponseEntity<List<?>> getAll(){
-        return ResponseEntity.status(HttpStatus.OK).body(manufacturadoService.getAll());
+    public ArticuloManufacturadoController(ArticuloManufacturadoServiceImpl servicio) {
+        super(servicio);
     }
 }

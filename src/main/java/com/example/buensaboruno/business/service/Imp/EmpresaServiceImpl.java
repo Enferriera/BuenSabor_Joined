@@ -5,12 +5,17 @@ import com.example.buensaboruno.business.service.Base.BaseServiceImp;
 import com.example.buensaboruno.business.service.EmpresaService;
 import com.example.buensaboruno.business.service.SucursalService;
 import com.example.buensaboruno.domain.entities.Empresa;
+import com.example.buensaboruno.repositories.BaseRepository;
 import com.example.buensaboruno.repositories.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmpresaServiceImpl extends BaseServiceImp<Empresa,Long> implements EmpresaService {
+    public EmpresaServiceImpl(BaseRepository<Empresa, Long> baseRepository, SucursalService sucursalService) {
+        super(baseRepository);
+        this.sucursalService = sucursalService;
+    }
 
     @Autowired
     SucursalService sucursalService;

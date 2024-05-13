@@ -1,9 +1,8 @@
 package com.example.buensaboruno.presentation.rest;
 
 
-import com.example.buensaboruno.business.facade.Imp.EmpresaFacadeImpl;
-import com.example.buensaboruno.domain.dto.EmpresaDto;
-import com.example.buensaboruno.domain.dto.EmpresaLargeDto;
+
+import com.example.buensaboruno.business.service.Imp.EmpresaServiceImpl;
 import com.example.buensaboruno.domain.entities.Empresa;
 import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.springframework.http.ResponseEntity;
@@ -15,13 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/empresa")
 @CrossOrigin("*")
-public class EmpresaController extends BaseControllerImp<Empresa, EmpresaDto, Long, EmpresaFacadeImpl> {
-    public EmpresaController(EmpresaFacadeImpl facade) {
-        super(facade);
-    }
+public class EmpresaController extends BaseControllerImp<Empresa, EmpresaServiceImpl> {
 
-    @PutMapping("/addSucursal/{idEmpresa}/{idSucursal}")
-    public ResponseEntity<EmpresaLargeDto> addSucursal(Long idEmpresa, Long idSucursal){
-        return ResponseEntity.ok(facade.addSucursal(idEmpresa,idSucursal));
+    public EmpresaController(EmpresaServiceImpl servicio) {
+        super(servicio);
     }
 }
