@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("unidadesmedida")
+@RequestMapping("/unidadesmedida")
 public class UnidadMedidaController extends BaseControllerImp<UnidadMedida, UnidadMedidaServiceImpl> {
 
     public UnidadMedidaController(UnidadMedidaServiceImpl servicio) {

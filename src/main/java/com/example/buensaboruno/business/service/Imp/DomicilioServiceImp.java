@@ -9,7 +9,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DomicilioServiceImp extends BaseServiceImp<Domicilio,Long> implements DomicilioService {
-    public DomicilioServiceImp(BaseRepository<Domicilio, Long> baseRepository) {
-        super(baseRepository);
-    }
-}
+   }

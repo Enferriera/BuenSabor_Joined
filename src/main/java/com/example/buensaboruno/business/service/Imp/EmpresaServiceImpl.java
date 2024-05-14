@@ -5,17 +5,18 @@ import com.example.buensaboruno.business.service.Base.BaseServiceImp;
 import com.example.buensaboruno.business.service.EmpresaService;
 import com.example.buensaboruno.business.service.SucursalService;
 import com.example.buensaboruno.domain.entities.Empresa;
+import com.example.buensaboruno.domain.entities.Sucursal;
 import com.example.buensaboruno.repositories.BaseRepository;
 import com.example.buensaboruno.repositories.EmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Set;
+import java.util.stream.Collectors;
+
 @Service
 public class EmpresaServiceImpl extends BaseServiceImp<Empresa,Long> implements EmpresaService {
-    public EmpresaServiceImpl(BaseRepository<Empresa, Long> baseRepository, SucursalService sucursalService) {
-        super(baseRepository);
-        this.sucursalService = sucursalService;
-    }
+
 
     @Autowired
     SucursalService sucursalService;
@@ -28,7 +29,15 @@ public class EmpresaServiceImpl extends BaseServiceImp<Empresa,Long> implements 
         Empresa empresa = empresaRepository.findWithSucursalesById(idEmpresa);
         empresa.getSucursales().add(sucursalService.getById(idSucursal));
         return empresa;
+    }
 
-        
+    @Override
+    public Empresa getEmpresaSucursales(Long idEmpresa) {
+        Empresa empresa = baseRepository.getById(idEmpresa);
+        Set<Sucursal> sucursales = empresa.getSucursales().stream()
+                .filter(sucursal -> !sucursal.isEliminado())
+                .collect(Collectors.toSet());
+        empresa.setSucursales(sucursales);
+        return empresa;
     }
 }

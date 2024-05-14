@@ -16,35 +16,32 @@ import java.util.Optional;
 @Service
 public abstract class BaseServiceImp<E extends Base,ID extends Serializable> implements BaseService<E, ID> {
 
+    private static final Logger logger = LoggerFactory.getLogger(BaseServiceImp.class);
 
-
+    @Autowired
     protected BaseRepository<E,ID> baseRepository;
-
-    public BaseServiceImp(BaseRepository<E, ID> baseRepository) {
-        this.baseRepository = baseRepository;
-    }
 
     @Override
     @Transactional
     public E create(E request){
         var newEntity = baseRepository.save(request);
-
+        logger.info("Creada entidad {}",newEntity);
         return newEntity;
     }
 
     @Override
     @Transactional
     public E getById(ID id){
-        Optional<E> entityOptional = baseRepository.findById(id);
-        return entityOptional.get();
-
+        var entity = baseRepository.getById(id);
+        logger.info("Obtenida entidad {}",entity);
+        return entity;
     }
 
     @Override
     @Transactional
     public List<E> getAll(){
-        var entities = baseRepository.findAll();
-
+        var entities = baseRepository.getAll();
+        logger.info("Obtenidas entidades {}",entities);
         return entities;
     }
 
@@ -53,7 +50,7 @@ public abstract class BaseServiceImp<E extends Base,ID extends Serializable> imp
     public void deleteById(ID id){
         var entity = getById(id);
         baseRepository.delete(entity);
-
+        logger.info("Borrada logicamente entidad {}",entity);
     }
 
     @Override
@@ -61,11 +58,11 @@ public abstract class BaseServiceImp<E extends Base,ID extends Serializable> imp
     public E update(E request, ID id){
         var optionalEntity = baseRepository.findById((ID) request.getId());
         if (optionalEntity.isEmpty()){
-
+            logger.error("No se encontro una entidad con el id " + request.getId());
             throw new RuntimeException("No se encontro una entidad con el id " + request.getId());
         }
         var newEntity = baseRepository.save(request);
-
+        logger.info("Actualizada entidad {}",newEntity);
         return newEntity;
     }
 }

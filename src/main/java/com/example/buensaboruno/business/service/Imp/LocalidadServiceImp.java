@@ -13,10 +13,7 @@ import java.util.List;
 
 @Service
 public class LocalidadServiceImp extends BaseServiceImp<Localidad,Long> implements LocalidadService {
-    public LocalidadServiceImp(BaseRepository<Localidad, Long> baseRepository, LocalidadRepository localidadRepository) {
-        super(baseRepository);
-        this.localidadRepository = localidadRepository;
-    }
+
 
     @Autowired
     LocalidadRepository localidadRepository;

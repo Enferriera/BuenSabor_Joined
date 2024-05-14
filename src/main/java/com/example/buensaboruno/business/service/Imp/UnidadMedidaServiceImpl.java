@@ -8,7 +8,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UnidadMedidaServiceImpl extends BaseServiceImp<UnidadMedida, Long> implements UnidadMedidaService {
-    public UnidadMedidaServiceImpl(BaseRepository<UnidadMedida, Long> baseRepository) {
-        super(baseRepository);
     }
-}

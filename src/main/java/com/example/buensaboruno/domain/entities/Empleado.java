@@ -1,8 +1,10 @@
     package com.example.buensaboruno.domain.entities;
 
     import com.example.buensaboruno.domain.enums.Rol;
+    import com.fasterxml.jackson.annotation.JsonBackReference;
     import jakarta.persistence.*;
     import lombok.*;
+    import lombok.experimental.SuperBuilder;
     import org.hibernate.envers.Audited;
     import org.hibernate.envers.NotAudited;
     import org.hibernate.envers.RelationTargetAuditMode;
@@ -17,7 +19,7 @@
     @NoArgsConstructor
     @Setter
     @Getter
-    @Builder
+    @SuperBuilder
     //@Audited
     public class Empleado extends Base{
 
@@ -45,5 +47,6 @@
         @ManyToOne
         @ToString.Exclude
         @JoinColumn(name = "sucursal_id")
+        @JsonBackReference
         private Sucursal sucursal;
     }

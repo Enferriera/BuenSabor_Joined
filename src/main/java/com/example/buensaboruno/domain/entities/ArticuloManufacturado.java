@@ -3,6 +3,7 @@ package com.example.buensaboruno.domain.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+import org.hibernate.boot.jaxb.hbm.internal.CacheAccessTypeConverter;
 import org.hibernate.envers.Audited;
 
 import java.util.HashSet;
@@ -24,7 +25,7 @@ public class ArticuloManufacturado  extends Articulo{
     private String preparacion;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "articuloManufacturado_id")
     @Builder.Default
     private Set<ArticuloManufacturadoDetalle> articuloManufacturadoDetalles = new HashSet<>();

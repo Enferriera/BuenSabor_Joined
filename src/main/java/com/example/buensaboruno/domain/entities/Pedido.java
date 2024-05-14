@@ -3,6 +3,7 @@ package com.example.buensaboruno.domain.entities;
 import com.example.buensaboruno.domain.enums.Estado;
 import com.example.buensaboruno.domain.enums.FormaPago;
 import com.example.buensaboruno.domain.enums.TipoEnvio;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -19,16 +20,17 @@ import java.util.Set;
 @Setter
 @Getter
 @ToString
-@Builder
+@SuperBuilder
 //@Audited
 public class Pedido extends Base{
-
+    @Schema(type = "string", format = "time", pattern = "HH:mm:ss", description = "Horario estimado finalizacion en formato HH:mm:ss")
     private LocalTime horaEstimadaFinalizacion;
     private Double total;
     private Double totalCosto;
     private Estado estado;
     private TipoEnvio tipoEnvio;
     private FormaPago formaPago;
+    @Schema(type = "string", format = "date", pattern = "yyyy-MM-dd", description = "Fecha en formato yyyy-MM-dd")
     private LocalDate fechaPedido;
 
     @ManyToOne

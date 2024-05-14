@@ -14,10 +14,7 @@ import java.util.List;
 
 @Service
 public class ProvinciaServiceImp extends BaseServiceImp<Provincia,Long> implements ProvinciaService {
-    public ProvinciaServiceImp(BaseRepository<Provincia, Long> baseRepository, ProvinciaRepository provinciaRepository) {
-        super(baseRepository);
-        this.provinciaRepository = provinciaRepository;
-    }
+
 
     @Autowired
     ProvinciaRepository provinciaRepository;

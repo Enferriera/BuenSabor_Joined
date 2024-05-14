@@ -1,5 +1,7 @@
 package com.example.buensaboruno.domain.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -35,6 +37,10 @@ public abstract class Articulo  extends Base {
 
     @ManyToOne
     protected UnidadMedida unidadMedida;
+
+    @ManyToOne
+    protected Categoria categoria;
+
 
 
 }

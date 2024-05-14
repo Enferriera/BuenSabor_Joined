@@ -8,7 +8,4 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CategoriaServiceImpl extends BaseServiceImp<Categoria, Long> implements CategoriaService {
-    public CategoriaServiceImpl(BaseRepository<Categoria, Long> baseRepository) {
-        super(baseRepository);
-    }
-}
+   }

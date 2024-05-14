@@ -9,8 +9,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SucursalServiceImpl extends BaseServiceImp<Sucursal,Long> implements SucursalService {
-    public SucursalServiceImpl(BaseRepository<Sucursal, Long> baseRepository) {
 
-        super(baseRepository);
-    }
 }

@@ -1,8 +1,11 @@
 package com.example.buensaboruno.domain.entities;
 
 import com.example.buensaboruno.domain.enums.TipoPromocion;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.hibernate.envers.NotAudited;
 
 import java.time.LocalDate;
@@ -16,13 +19,17 @@ import java.util.Set;
 @Setter
 @Getter
 @ToString
-@Builder
+@SuperBuilder
 //@Audited
 public class Promocion  extends Base{
     private String denominacion;
+    @Schema(type = "string", format = "date", pattern = "yyyy-MM-dd", description = "Fecha en formato yyyy-MM-dd")
     private LocalDate fechaDesde;
+    @Schema(type = "string", format = "date", pattern = "yyyy-MM-dd", description = "Fecha en formato yyyy-MM-dd")
     private LocalDate fechaHasta;
+    @Schema(type = "string", format = "time", pattern = "HH:mm:ss", description = "Horario de apertura en formato HH:mm:ss")
     private LocalTime horaDesde;
+    @Schema(type = "string", format = "time", pattern = "HH:mm:ss", description = "Horario de apertura en formato HH:mm:ss")
     private LocalTime horaHasta;
     private String descripcionDescuento;
     private Double precioPromocional;
@@ -48,6 +55,7 @@ public class Promocion  extends Base{
 
 
     @ManyToMany (mappedBy = "promociones")
+    @JsonIgnore
     private Set<Sucursal> sucursales = new HashSet<>();
 
 

@@ -28,7 +28,7 @@ public class BuensaborunoApplication {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	@Autowired
-	private ImagenClienteRepository imagenPersonaRepository;
+	private ImagenClienteRepository imagenClienteRepository;
 	@Autowired
 	private PromocionDetalleRepository promocionDetalleRepository;
 
@@ -174,24 +174,24 @@ public class BuensaborunoApplication {
 			empresaRepository.save(empresaCarlos);
 
 			// Crear Categorías de productos y subCategorías de los mismos
-			Categoria categoriaBebidas = Categoria.builder().denominacion("Bebidas").
+			Categoria categoriaBebidas = Categoria.builder().denominacion("Bebidas").esInsumo(false).
 					build();
 			categoriaRepository.save(categoriaBebidas);
 
-			Categoria categoriaGaseosas = Categoria.builder().denominacion("Gaseosas").
+			Categoria categoriaGaseosas = Categoria.builder().denominacion("Gaseosas").esInsumo(false).
 					build();
 			categoriaRepository.save(categoriaGaseosas);
 
-			Categoria categoriaTragos = Categoria.builder().denominacion("Tragos").
+			Categoria categoriaTragos = Categoria.builder().denominacion("Tragos").esInsumo(false).
 					build();
 			categoriaRepository.save(categoriaTragos);
 
-			Categoria categoriaPizzas = Categoria.builder().denominacion("Pizzas").
+			Categoria categoriaPizzas = Categoria.builder().denominacion("Pizzas").esInsumo(false).
 					build();
 
 
 
-			Categoria categoriaInsumos = Categoria.builder().denominacion("Insumos").
+			Categoria categoriaInsumos = Categoria.builder().denominacion("Insumos").esInsumo(true).
 					build();
 
 			// Grabo la categoría de insumos y de Manufacturados
@@ -289,6 +289,10 @@ public class BuensaborunoApplication {
 
 
 			//ASOCIAMOS CATEGORIA CON INSUMOS
+			harina.setCategoria(categoriaInsumos);
+			queso.setCategoria(categoriaInsumos);
+			tomate.setCategoria(categoriaInsumos);
+			cocaCola.setCategoria(categoriaGaseosas);
 			categoriaInsumos.getArticulos().add(harina);
 			categoriaInsumos.getArticulos().add(queso);
 			categoriaInsumos.getArticulos().add(tomate);
@@ -320,6 +324,13 @@ public class BuensaborunoApplication {
 			pizzaNapolitana.getImagenes().add(imagenArticuloPizzaNapolitana);
 			articuloManufacturadoRepository.save(pizzaMuzarella);
 			articuloManufacturadoRepository.save(pizzaNapolitana);
+
+			pizzaMuzarella.setCategoria(categoriaPizzas);
+			pizzaNapolitana.setCategoria(categoriaPizzas);
+
+			categoriaPizzas.getArticulos().add(pizzaMuzarella);
+			categoriaPizzas.getArticulos().add(pizzaNapolitana);
+			categoriaRepository.save(categoriaPizzas);
 
 			// Establecer las relaciones entre estos objetos. Art+iculos de la Receta independiente
 			ArticuloManufacturadoDetalle detalle1 = ArticuloManufacturadoDetalle.builder().
@@ -623,6 +634,3 @@ public class BuensaborunoApplication {
 	}
 
 }
-
-
-

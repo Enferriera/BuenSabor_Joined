@@ -1,6 +1,7 @@
 package com.example.buensaboruno.domain.entities;
 
 import com.example.buensaboruno.domain.enums.FormaPago;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -16,9 +17,10 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-@Builder
+@SuperBuilder
 //@Audited
 public class Factura extends Base{
+    @Schema(type = "string", format = "date", pattern = "yyyy-MM-dd", description = "Fecha en formato yyyy-MM-dd")
     private LocalDate fechaFcturacion;
     private Integer mpPaymentId;
     private Integer mpMerchantOrderId;
