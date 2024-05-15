@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface ArticuloManufacturadoService extends BaseService<ArticuloManufacturado, Long> {
     List<ArticuloManufacturado> obtenerArticulosPorDenominacion(String denominacion);
-
+    ArticuloManufacturado obtenerArticulosPorCodigo(String codigo);
 }

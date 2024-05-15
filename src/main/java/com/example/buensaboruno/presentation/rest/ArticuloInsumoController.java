@@ -2,6 +2,7 @@ package com.example.buensaboruno.presentation.rest;
 
 import com.example.buensaboruno.business.service.Imp.ArticuloInsumoServiceImpl;
 import com.example.buensaboruno.domain.entities.ArticuloInsumo;
+import com.example.buensaboruno.domain.entities.ArticuloManufacturado;
 import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,19 @@ import java.util.List;
 @RequestMapping(path = "articulos/insumos")
 public class ArticuloInsumoController extends BaseControllerImp<ArticuloInsumo, ArticuloInsumoServiceImpl> {
 
+
     public ArticuloInsumoController(ArticuloInsumoServiceImpl servicio) {
         super(servicio);
     }
+
+    @GetMapping("/buscar/denominacion")
+    public ResponseEntity<List<ArticuloInsumo>> buscarDenominacion(@RequestParam String denominacion) {
+        return  ResponseEntity.ok().body(servicio.obtenerArticulosPorDenominacion(denominacion));
+    }
+
+    @GetMapping("/buscar/codigo")
+    public ResponseEntity<ArticuloInsumo> buscarCodigo(@RequestParam String codigo) {
+        return  ResponseEntity.ok().body(servicio.obtenerArticulosPorCodigo(codigo));
+    }
+
 }

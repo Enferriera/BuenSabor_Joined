@@ -24,6 +24,7 @@ public abstract class Articulo  extends Base {
 
     protected String denominacion;
     protected Double precioVenta;
+    protected String codigo;
 
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

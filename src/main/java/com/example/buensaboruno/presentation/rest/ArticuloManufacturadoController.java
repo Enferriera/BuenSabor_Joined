@@ -21,9 +21,14 @@ public class ArticuloManufacturadoController extends BaseControllerImp<ArticuloM
         super(servicio);
     }
 
-    @GetMapping("/buscar")
-    public ResponseEntity<List<ArticuloManufacturado>> buscar(@RequestParam String denominacion) {
+    @GetMapping("/buscar/denominacion")
+    public ResponseEntity<List<ArticuloManufacturado>> buscarDenominacion(@RequestParam String denominacion) {
         return  ResponseEntity.ok().body(servicio.obtenerArticulosPorDenominacion(denominacion));
+    }
+
+    @GetMapping("/buscar/codigo")
+    public ResponseEntity<ArticuloManufacturado> buscarCodigo(@RequestParam String codigo) {
+        return  ResponseEntity.ok().body(servicio.obtenerArticulosPorCodigo(codigo));
     }
 
 }

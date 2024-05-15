@@ -24,7 +24,7 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImp<ArticuloMan
     private ImagenArticuloRepository imagenArticuloRepository;
 
     @Autowired
-    private ArticuloManufacturadoDetalleRepository articuloRepository;
+    private ArticuloRepository articuloRepository;
     @Autowired
     private ArticuloManufacturadoDetalleRepository articuloManufacturadoDetalleRepository;
 
@@ -50,6 +50,12 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImp<ArticuloMan
     @Transactional
     public List<ArticuloManufacturado> obtenerArticulosPorDenominacion(String denominacion) {
         return articuloManufacturadoRepository.findByDenominacionContaining(denominacion);
+    }
+
+    @Override
+    @Transactional
+    public ArticuloManufacturado obtenerArticulosPorCodigo(String codigo) {
+        return articuloManufacturadoRepository.findByCodigoContaining(codigo);
     }
 
 

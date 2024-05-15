@@ -14,4 +14,7 @@ public interface ArticuloManufacturadoRepository extends BaseRepository<Articulo
     @Query("SELECT a FROM Articulo a WHERE LOWER(a.denominacion) LIKE LOWER(CONCAT('%', :denominacion, '%'))")
     List<ArticuloManufacturado> findByDenominacionContaining(@Param("denominacion") String denominacion);
 
+    @Query("SELECT a FROM Articulo a WHERE   a.codigo =:codigo ")
+    ArticuloManufacturado findByCodigoContaining(@Param("codigo") String codigo);
+
 }
