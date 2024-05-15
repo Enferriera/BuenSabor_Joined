@@ -28,7 +28,7 @@ public interface BaseRepository <E extends Base, ID extends Serializable> extend
         var optionalEntity = findById(id);
 
         if (optionalEntity.isEmpty()){
-            String errMsg = "La entidad con el id " + id + " se encuentra borrada logicamente";
+            String errMsg = "La entidad con el id " + id + " no existe";
             logger.error(errMsg);
             throw new RuntimeException(errMsg);
         }
