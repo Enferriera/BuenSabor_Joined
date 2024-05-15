@@ -271,10 +271,10 @@ public class BuensaborunoApplication {
 			ImagenArticulo imagenArticuloHarina = ImagenArticulo.builder().url("https://mandolina.co/wp-content/uploads/2023/03/648366622-1024x683.jpg").build();
 			ImagenArticulo imagenArticuloQueso = ImagenArticulo.builder().url("https://superdepaso.com.ar/wp-content/uploads/2021/06/SANTAROSA-PATEGRAS-04.jpg").build();
 			ImagenArticulo imagenArticuloTomate = ImagenArticulo.builder().url("https://thefoodtech.com/wp-content/uploads/2020/06/Componentes-de-calidad-en-el-tomate-828x548.jpg").build();
-			imagenArticuloRepository.save(imagenArticuloCoca);
+			/*imagenArticuloRepository.save(imagenArticuloCoca);
 			imagenArticuloRepository.save(imagenArticuloHarina);
 			imagenArticuloRepository.save(imagenArticuloQueso);
-			imagenArticuloRepository.save(imagenArticuloTomate);
+			imagenArticuloRepository.save(imagenArticuloTomate);*/
 
 			//ASOCIAMOS IMAGEN CON INSUMOS
 			cocaCola.getImagenes().add(imagenArticuloCoca);
@@ -316,8 +316,8 @@ public class BuensaborunoApplication {
 					url("https://storage.googleapis.com/fitia-api-bucket/media/images/recipe_images/1002846.jpg").
 					build();
 			ImagenArticulo imagenArticuloPizzaNapolitana = ImagenArticulo.builder().url("https://assets.elgourmet.com/wp-content/uploads/2023/03/8metlvp345_portada-pizza-1024x686.jpg.webp").build();
-			imagenArticuloRepository.save(imagenArticuloPizzaMuzarella);
-			imagenArticuloRepository.save(imagenArticuloPizzaNapolitana);
+			/*imagenArticuloRepository.save(imagenArticuloPizzaMuzarella);
+			imagenArticuloRepository.save(imagenArticuloPizzaNapolitana);*/
 
 			//ASOCIAMOS IMAGEN CON ARTICULO MANUFACTURADO
 			pizzaMuzarella.getImagenes().add(imagenArticuloPizzaMuzarella);

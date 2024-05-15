@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 @RequestMapping("articulos/detalles")
 public class ArticuloManufacturadoDetalleController extends BaseControllerImp<ArticuloManufacturadoDetalle, ArticuloManufacturadoDetalleServiceImpl> {
     public ArticuloManufacturadoDetalleController(ArticuloManufacturadoDetalleServiceImpl servicio) {

@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/pais")
-@CrossOrigin("*")
+@RequestMapping(path="/pais")
+@CrossOrigin(origins="*")
 public class PaisController extends BaseControllerImp<Pais, PaisServiceImp> {
     public PaisController(PaisServiceImp servicio) {
         super(servicio);

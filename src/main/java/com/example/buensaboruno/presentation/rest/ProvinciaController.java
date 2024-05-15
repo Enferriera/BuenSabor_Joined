@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/provincia")
-@CrossOrigin("*")
+@RequestMapping(path="/provincia")
+@CrossOrigin(origins="*")
 public class ProvinciaController extends BaseControllerImp<Provincia, ProvinciaServiceImp> {
     public ProvinciaController(ProvinciaServiceImp servicio) {
         super(servicio);

@@ -4,10 +4,8 @@ import com.example.buensaboruno.business.service.ArticuloManufacturadoService;
 import com.example.buensaboruno.business.service.Base.BaseServiceImp;
 import com.example.buensaboruno.domain.entities.ArticuloManufacturado;
 import com.example.buensaboruno.domain.entities.ArticuloManufacturadoDetalle;
-import com.example.buensaboruno.repositories.ArticuloManufacturadoDetalleRepository;
-import com.example.buensaboruno.repositories.ArticuloManufacturadoRepository;
-import com.example.buensaboruno.repositories.ArticuloRepository;
-import com.example.buensaboruno.repositories.CategoriaRepository;
+import com.example.buensaboruno.domain.entities.ImagenArticulo;
+import com.example.buensaboruno.repositories.*;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +18,9 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImp<ArticuloMan
     private ArticuloManufacturadoRepository articuloManufacturadoRepository;
     @Autowired
     private CategoriaRepository categoriaRepository;
+
+    @Autowired
+    private ImagenArticuloRepository imagenArticuloRepository;
 
     @Autowired
     private ArticuloManufacturadoDetalleRepository articuloRepository;
@@ -36,6 +37,10 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImp<ArticuloMan
         Set<ArticuloManufacturadoDetalle>  detallesBorrar=manufacturadoBorrar.get().getArticuloManufacturadoDetalles();
         for (ArticuloManufacturadoDetalle elemento : detallesBorrar) {
             articuloManufacturadoDetalleRepository.delete(elemento);
+        }
+        Set<ImagenArticulo> imagenesBorrar=manufacturadoBorrar.get().getImagenes();
+        for (ImagenArticulo elemento : imagenesBorrar) {
+            imagenArticuloRepository.delete(elemento);
         }
         articuloManufacturadoRepository.delete(manufacturadoBorrar.get());
     }

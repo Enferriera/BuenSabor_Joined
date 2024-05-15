@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/sucursal")
-@CrossOrigin("*")
+@RequestMapping(path="/sucursal")
+@CrossOrigin(origins="*")
 public class SucursalController extends BaseControllerImp<Sucursal, SucursalServiceImpl> {
     public SucursalController(SucursalServiceImpl servicio) {
         super(servicio);

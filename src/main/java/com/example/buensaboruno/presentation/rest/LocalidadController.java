@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/localidad")
-@CrossOrigin("*")
+@RequestMapping(path="/localidad")
+@CrossOrigin(origins="*")
 public class LocalidadController extends BaseControllerImp<Localidad, LocalidadServiceImp> {
     public LocalidadController(LocalidadServiceImp servicio) {
         super(servicio);

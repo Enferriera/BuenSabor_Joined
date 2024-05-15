@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 @RequestMapping(path = "articulos/insumos")
 public class ArticuloInsumoController extends BaseControllerImp<ArticuloInsumo, ArticuloInsumoServiceImpl> {
 

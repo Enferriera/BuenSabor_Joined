@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 @RequestMapping("categorias")
 public class CategoriaController extends BaseControllerImp<Categoria, CategoriaServiceImpl> {
     public CategoriaController(CategoriaServiceImpl servicio) {

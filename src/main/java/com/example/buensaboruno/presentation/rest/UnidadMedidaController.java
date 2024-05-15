@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping("/unidadesmedida")
+@CrossOrigin(origins="*")
+@RequestMapping(path="/unidadesmedida")
 public class UnidadMedidaController extends BaseControllerImp<UnidadMedida, UnidadMedidaServiceImpl> {
 
     public UnidadMedidaController(UnidadMedidaServiceImpl servicio) {

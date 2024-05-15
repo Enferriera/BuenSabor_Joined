@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/empresa")
-@CrossOrigin("*")
+@RequestMapping(path="/empresa")
+@CrossOrigin(origins="*")
 public class EmpresaController extends BaseControllerImp<Empresa, EmpresaServiceImpl> {
 
     public EmpresaController(EmpresaServiceImpl servicio) {

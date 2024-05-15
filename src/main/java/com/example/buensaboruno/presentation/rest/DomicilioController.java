@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/domicilio")
-@CrossOrigin("*")
+@CrossOrigin(origins="*")
 public class DomicilioController extends BaseControllerImp<Domicilio, DomicilioServiceImp> {
 
     public DomicilioController(DomicilioServiceImp servicio) {
