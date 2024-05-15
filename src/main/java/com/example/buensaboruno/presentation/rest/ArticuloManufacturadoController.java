@@ -6,10 +6,7 @@ import com.example.buensaboruno.presentation.rest.Base.BaseControllerImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +15,15 @@ import java.util.List;
 @RequestMapping("articulos/manufacturados")
 public class ArticuloManufacturadoController extends BaseControllerImp<ArticuloManufacturado, ArticuloManufacturadoServiceImpl> {
 
+    @Autowired
+    private ArticuloManufacturadoServiceImpl servicio;
     public ArticuloManufacturadoController(ArticuloManufacturadoServiceImpl servicio) {
         super(servicio);
     }
+
+    @GetMapping("/buscar")
+    public ResponseEntity<List<ArticuloManufacturado>> buscar(@RequestParam String denominacion) {
+        return  ResponseEntity.ok().body(servicio.obtenerArticulosPorDenominacion(denominacion));
+    }
+
 }

@@ -10,6 +10,7 @@ import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -43,6 +44,12 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImp<ArticuloMan
             imagenArticuloRepository.delete(elemento);
         }
         articuloManufacturadoRepository.delete(manufacturadoBorrar.get());
+    }
+
+    @Override
+    @Transactional
+    public List<ArticuloManufacturado> obtenerArticulosPorDenominacion(String denominacion) {
+        return articuloManufacturadoRepository.findByDenominacionContaining(denominacion);
     }
 
 
