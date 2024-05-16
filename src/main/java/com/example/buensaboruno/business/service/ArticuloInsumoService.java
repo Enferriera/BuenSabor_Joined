@@ -9,4 +9,6 @@ import java.util.List;
 public interface ArticuloInsumoService extends BaseService<ArticuloInsumo, Long> {
     List<ArticuloInsumo> obtenerArticulosPorDenominacion(String denominacion);
     ArticuloInsumo obtenerArticulosPorCodigo(String codigo);
+
+    List<ArticuloInsumo> obtenerInsumosElaborados();
 }

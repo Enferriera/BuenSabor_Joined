@@ -30,4 +30,10 @@ private ArticuloInsumoRepository articuloInsumoRepository;
         return articuloInsumoRepository.findByCodigoContaining(codigo);
     }
 
+    @Override
+    @Transactional
+    public List<ArticuloInsumo> obtenerInsumosElaborados(){
+        return articuloInsumoRepository.findProductosElaborados();
+    }
+
 }

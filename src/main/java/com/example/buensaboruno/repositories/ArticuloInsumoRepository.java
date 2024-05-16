@@ -16,4 +16,7 @@ public interface ArticuloInsumoRepository extends BaseRepository<ArticuloInsumo,
     @Query("SELECT a FROM Articulo a WHERE   a.codigo =:codigo ")
     ArticuloInsumo findByCodigoContaining(@Param("codigo") String codigo);
 
+    @Query("SELECT a FROM ArticuloInsumo a WHERE a.esParaElaborar = true")
+    List<ArticuloInsumo> findProductosElaborados();
+
 }

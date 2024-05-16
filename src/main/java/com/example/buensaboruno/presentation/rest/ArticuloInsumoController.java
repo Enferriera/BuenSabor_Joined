@@ -33,4 +33,9 @@ public class ArticuloInsumoController extends BaseControllerImp<ArticuloInsumo, 
         return  ResponseEntity.ok().body(servicio.obtenerArticulosPorCodigo(codigo));
     }
 
+    @GetMapping("/buscar/elaborados")
+    public ResponseEntity<List<ArticuloInsumo>> buscarElaborado(){
+        return ResponseEntity.ok().body(servicio.obtenerInsumosElaborados());
+    }
+
 }
